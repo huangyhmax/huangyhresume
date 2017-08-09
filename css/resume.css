@@ -1,0 +1,264 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    background: #F5F5F5;
+    /*font-size: 14px;*/
+    font-family: -apple-system, "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", "Source Han Sans SC", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
+}
+html,body,#resume{
+    height: 145%;
+}
+.icon {
+    width: 1em; height: 1em;
+    /*vertical-align: -0.15em;*/
+    fill: currentColor;
+    overflow: hidden;
+    vertical-align: middle;
+    font-size: 25px;
+    margin-right: 0.3em;
+}
+/*#resume{
+    background: gray;
+
+}*/
+.clearfix::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.leftside{
+    background: #5296B9;
+    /*border: 1px solid blue;*/
+    width: 20%;
+    /*height: 1200px;*/
+    float: left;
+    height: 100%;
+}
+.basicdata,.education,.awards{
+    box-sizing: border-box;
+    background: #5296B9;
+    /*border:1px solid red;*/
+    /*margin: 5%;*/
+}
+.basicdata,.education,.awards{
+    margin: 10% 5%;
+    width:90%;
+}
+.basicdata .name{
+    font-size: 30px; /**/
+    color: #E77A31;
+    text-align: center;
+    margin: 10%;
+    letter-spacing: 5px;
+    background: #5296B9;
+}
+.title{
+    width: 90%;
+    background: #EB5635;
+    padding: 1% 0;
+    color: #fff;
+    font-size: 14px;
+    vertical-align: middle;
+    margin: 0 0 5% 10%;
+}
+.title::before{
+    content: '';
+    width: -4%;
+    padding: 6%;
+    background: #EB5635;
+    display: inline-block;
+    position: relative;
+    left: -6%;
+    top: 0px;
+    vertical-align: middle;
+    transform: rotateZ(45deg);
+}
+.picture{
+    text-align: center;
+    background: #5296B9;
+}
+.picture>img{
+    width: 60%;
+    border: 5px solid #fff;
+    
+}
+.Info{
+    width: 100%;
+    font-size: 14px;
+    color: #fff;
+    background: #5296B9;
+}
+
+/*.Info span{
+    display: block;
+
+    padding: 4% 2%;
+    background: #5296B9;
+}*/
+.infocon{
+    border: 1px solid red;
+    display: inline-block;
+}
+.infoicons{
+    display: inline-block;
+}
+.dimensionalcode{
+    width: 40%;
+    display: inline-block;
+    margin-left: 18%;
+}
+.iconone{
+    background: #5296B9;
+}
+
+.icontwo{
+    background: #EB5635;
+    vertical-align: middle;
+}
+.colspan{
+    background: #5296B9;
+    padding: 3% 2%;
+    font-size: 0px;
+}
+.colspandata{
+    color: #fff;
+    background: #5296B9;
+    font-size: 15px;
+    vertical-align: middle;
+    width: 85%;
+    display: inline-block;
+}
+/**/
+.rightside{
+    /*border:1px solid orange;*/
+    max-width: 80%;
+    margin-left: 21%;
+    /*height: 1200px;*/
+}
+.righttitle{
+    width: 20%;
+    background: #E77A31;
+    margin-left: 2%;
+    padding: 0.5% 0;
+    color: #fff;
+    font-size: 14px;
+    vertical-align: middle;
+}
+.righttitle::before{
+    content: '';
+    width: -4%;
+    padding: 6%;
+    background: #E77A31;
+    display: inline-block;
+    position: relative;
+    left: -6%;
+    top: 0px;
+    vertical-align: middle;
+    transform: rotateZ(45deg);
+}
+.applyforjob,.workexperience,.frontendexperience,.skills{
+    box-sizing: border-box;
+    /*border: 1px solid red;*/
+}
+.applyforjob{
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: #5296B9;
+    border-bottom: 2px dashed #EB5635;
+    padding: 0.5%;
+    margin-bottom: 0.8%;
+}
+.jobexp{
+    background: #EB5635;
+    padding: 0.8%;
+    /*background: blue;*/
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 8px;
+}
+.jobexp span{
+    vertical-align: bottom;
+    background: #EB5635;
+}
+.jobexpcon{
+    margin: 1% 0;
+}
+.jobicon{
+    fill: #777;
+    margin-right: 1%;
+    font-size: 18px;
+    vertical-align: middle;
+}
+.itemname{
+    position: relative;
+    background: #EB5635;
+    padding: 1.3%;
+    /*background: blue;*/
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 8px;
+}
+.preview{
+    position: absolute;
+    right: 2%;
+    color: #fff;
+    font-size: 15px;
+    background: #5296B9;
+    padding: 0.6%;
+    border-radius: 12px;
+}
+.preview span{
+    background: #5296B9;
+    vertical-align: middle;
+}
+.previewicon{
+    font-size: 18px;
+    margin-right: -3px;
+    background: #5296B9;
+    vertical-align: middle;
+}
+.itemcontent{
+    margin: 2% 0;
+    font-size: 0px;
+    /*border:1px solid gray;*/
+    /*position: relative;*/
+}
+.itemcontent span{
+    font-size: 15px;
+    display: inline-block;
+    /*border: 1px solid red;*/
+    width: 90%;
+    vertical-align: middle;
+    line-height: 1.8em;
+}
+.setting{
+    fill: #777;
+    margin-right: 2%;
+    font-size: 18px;
+    vertical-align: middle;
+}
+.frontendexperience,.skills{
+    font-size: 0px;
+}
+.item{
+    font-size: 14px;
+    /*border: 1px solid black;*/
+    width:48%;
+    display: inline-block;
+    box-sizing: border-box;
+}
+.item:nth-child(odd){
+    margin-right: 4%;
+}
+@media (max-width:640px){
+  .item{
+    width:100%;
+    border: 1px solid black;
+  }
+}
