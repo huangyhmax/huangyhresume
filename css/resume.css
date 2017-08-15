@@ -8,7 +8,7 @@
     font-family: -apple-system, "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", "Source Han Sans SC", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
 }
 html,body,#resume{
-    height: 145%;
+    height: 142%;
 }
 .icon {
     width: 1em; height: 1em;
@@ -49,7 +49,7 @@ html,body,#resume{
 }
 .basicdata .name{
     font-size: 30px; /**/
-    color: #E77A31;
+    color: #fff;
     text-align: center;
     margin: 10%;
     letter-spacing: 5px;
@@ -118,6 +118,10 @@ html,body,#resume{
     background: #EB5635;
     vertical-align: middle;
 }
+.icontwo.project{
+    font-size: 18px;
+    background: #f99078;
+}
 .colspan{
     background: #5296B9;
     padding: 3% 2%;
@@ -128,8 +132,14 @@ html,body,#resume{
     background: #5296B9;
     font-size: 15px;
     vertical-align: middle;
-    width: 85%;
+    width: 80%;
     display: inline-block;
+    word-wrap: break-word;
+}
+.colspandata>a{
+    background: #5296B9;
+    color: #fff;
+    text-decoration:underline;
 }
 /**/
 .rightside{
@@ -180,10 +190,26 @@ html,body,#resume{
     font-weight: bold;
     color: #fff;
     border-radius: 8px;
+    position: relative;
 }
 .jobexp span{
     vertical-align: bottom;
     background: #EB5635;
+}
+.jobexp .worktime{
+    position: absolute;
+    right: 5%;
+}
+.jobexp.project{
+    margin: 1% 0;
+    /*width: 75%;*/
+    font-size: 15px;
+    font-weight: normal;
+    background: #f99078;
+    
+}
+.jobexp.project span{
+    background: #f99078;    
 }
 .jobexpcon{
     margin: 1% 0;
@@ -252,6 +278,7 @@ html,body,#resume{
     width:48%;
     display: inline-block;
     box-sizing: border-box;
+    vertical-align: top;
 }
 .item:nth-child(odd){
     margin-right: 4%;
