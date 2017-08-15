@@ -230,6 +230,16 @@ html,body,#resume{
     color: #fff;
     border-radius: 8px;
 }
+.itemname.show .previewwebapp{
+    display: block;
+}
+.itemname .previewwebapp{
+    position: absolute;
+    width: 145px;
+    top: 32px;
+    right: 10px;
+    display: none;
+}
 .preview{
     position: absolute;
     right: 2%;

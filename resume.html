@@ -7,6 +7,7 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <link rel="stylesheet" type="text/css" href="./css/resume.css">
     <script src="http://at.alicdn.com/t/font_378764_envsyap3sip5jyvi.js"></script>
+    <script src="./js/jquery-3.2.1.min.js"></script>
     <title>黄燕虹-应聘前端工程师</title>
 </head>
 <body>
@@ -340,38 +341,39 @@
                                 <svg class="icon icontwo" aria-hidden="true">
                                     <use xlink:href="#icon-myshow"></use>
                                 </svg>
-                                   移动端统计报告
-                                <a href="https://huangyhmax.github.io/H5Webapp/work/index.html" target="_blank" class="preview">
+                                   微博使用统计报告(移动端页面)
+                                <a href="https://huangyhmax.github.io/H5Webapp/work/index.html" target="_blank" class="preview webapp">
                                     <svg class="icon previewicon" aria-hidden="true">
                                         <use xlink:href="#icon-link"></use>
                                     </svg>
                                     <span>效果预览</span>
                                 </a>
+                                <img src="./img/h5webapp.JPG" class="previewwebapp">
                             </div>
                             <div class="itemusage">
                                 <div class="itemcontent">
                                     <svg class="icon setting" aria-hidden="true">
                                         <use xlink:href="#icon-shezhi"></use>
                                     </svg>
-                                    <span>实现XXX主题的统计报告的移动端展示页面</span>
+                                    <span>实现微博用户使用情况数据统计报告的移动端展示页面</span>
                                 </div>
                                 <div class="itemcontent">
                                     <svg class="icon setting" aria-hidden="true">
                                         <use xlink:href="#icon-shezhi"></use>
                                     </svg>
-                                    <span>使用Canvas和css绘制折线图、饼图、环图、雷达图、柱图等图表</span>
+                                    <span>使用HTML5的Canvas和css绘制折线图、饼图、环图、雷达图、柱图等图表</span>
                                 </div>
                                 <div class="itemcontent">
                                     <svg class="icon setting" aria-hidden="true">
                                         <use xlink:href="#icon-shezhi"></use>
                                     </svg>
-                                    <span>使用CSS3实现动态加载效果，样式大小兼容移动端ritina高清屏</span>
+                                    <span>使用CSS3实现动态加载效果，样式大小兼容移动端Retina双分辨率高清屏</span>
                                 </div>
                                 <div class="itemcontent">
                                     <svg class="icon setting" aria-hidden="true">
                                         <use xlink:href="#icon-shezhi"></use>
                                     </svg>
-                                    <span>采用组件化思想，将功能抽离构建出：图表组件、图文组件和内容管理组件，整合展示</span>
+                                    <span>采用组件化思想，将功能抽离为构建图表组件、图文组件和内容管理组件，使用fullpage.js整合滚动展示</span>
                                 </div>
                             </div>
                         </li>
@@ -678,6 +680,18 @@
             </div>
         </div>
     </div>
+    <script>
+        $(function(){
+            $('.webapp').on('mouseenter',function(){
+                console.log(1)
+                $(this).parent('.itemname').addClass('show');
+            })
+            $('.webapp').on('mouseleave',function(){
+                console.log(2)
+                $(this).parent('.itemname').removeClass('show');
+            })
+        })
+    </script>
 </body>
 </html>
 
