@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="./js/jquery.fullpage.css">
+    <script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.fullpage.js"></script>
+    <script src="http://at.alicdn.com/t/font_386356_61z21kd4sfw29.js"></script>
+    <title>黄燕虹的作品集</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+
+            font-family: -apple-system, "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", "Source Han Sans SC", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
+        }
+
+        .icon {
+            width: 1em;
+            height: 1em;
+            /*vertical-align: -0.15em;*/
+            fill: currentColor;
+            overflow: hidden;
+            vertical-align: middle;
+            font-size: 25px;
+            /*margin-right: 0.3em;*/
+        }
+
+        .iconone {
+            /*fill: red;*/
+            font-size: 38px;
+            margin: 10px;
+            /*background: blue;*/
+        }
+
+        #fp-nav ul li .fp-tooltip {
+            color: #867272;
+        }
+
+        .middle {
+            margin: 0 auto;
+            width: 90%;
+            height: 100%;
+            /*background: #ccc;*/
+            border: 1px solid transparent;
+            /*position: relative;*/
+        }
+        /*基础信息的样式*/
+
+        .middle .basicdata {
+            /*position: absolute;*/
+            width: 80%;
+            margin: 10% auto;
+            border: 1px solid transparent;
+            text-align: center;
+        }
+
+        .middle .basicdata .picture {
+            text-align: center;
+        }
+
+        .middle .basicdata .picture img {
+            width: 150px;
+            height: 150px;
+            border: 5px solid #fff;
+            box-shadow: 0 0 15px #ccc;
+            border-radius: 50%;
+        }
+
+        .myname,
+        .work {
+            margin: 2% 0;
+            color: #888484;
+        }
+
+        .contacticon {
+            border: 1px solid transparent;
+            box-shadow: 0 0 10px #ef9797;
+            padding: 1% 2%;
+            margin: 5% 0;
+        }
+        .contacticon .emailandphone{
+            color: #757171;
+            font-weight: bold;
+        }
+        /*@keyframes typing { from { width: 0; } }
+        @keyframes blink-caret { 50% { border-color: transparent; } }
+
+        h1 { 
+            font: bold 200%;
+            border-right: .1em solid;
+            width: 13em; 
+            margin: 2em 1em;
+            white-space: nowrap;
+            overflow: hidden;
+             animation: typing 10s steps(13, end),
+                    blink-caret .5s step-end infinite alternate; 
+        }*/
+
+        /*作品样式*/
+        /*<div class="item">
+            <img src="" alt="" class="comspimg">
+            <div class="title">
+                <h3></h3>
+            </div>
+        </div>*/
+        .composition{
+            /*background: orange;*/
+            margin: 5% -2% 0 0;
+        }
+        .composition::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        .item{
+            width: 23%;
+            box-sizing: border-box;
+            border: 1px solid #fff;
+            margin: 0 2% 1.5% 0%;
+            float: left;
+            border-radius: 5px;
+            background: #F5F5F5;
+            position:relative; 
+        }
+        .item .comspimg{
+            display: block;
+            width: 100%;
+            height: 100%;
+            /*border:2px solid #fff;*/
+            border-radius: 5px;
+        }
+        .item .title{
+            /*border:1px solid blue;*/
+            margin: 3% 1%;
+            
+        }
+        .item .title>a{
+            color: #EB5635;
+        }
+        .item .hover{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 18%;
+            background: rgba(254,209,54,.9);
+            opacity: 0;
+        }
+        .item.show .hover{
+            opacity: 1;
+        }
+        .hoverdesc{
+            padding: 1% 5% 0% 5%;
+            line-height: 2;
+            font-size: 0.8em;
+            color: #fff;
+            text-align: justify;
+        }
+        .hoverdescpre{
+            text-align: center;
+        }
+        /*.webappmove{
+            position: relative;
+        }*/
+        .previewwebapp{
+            width: 30%;
+        }
+        /*博客部分的样式*/
+
+        /*.blog {
+            margin: 10% 0;
+        }*/
+
+        .blog::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .blog>li {
+            width: 48%;
+            box-sizing: border-box;
+            border: 1px solid black;
+            float: left;
+            /* padding: 5%; */
+            /* height: 40%; */
+            margin: 1% 1% 1% 1%;
+            border: 1px solid #ccc;
+        }
+
+        .blogcontext .context {
+            height: 120px;
+            border: 1px solid transparent;
+            padding: 0px 10px;
+            box-shadow: 0 0 20px #9e9a9a;
+        }
+
+        .blogcontext .context h3 {
+            margin: 4px 0px 8px 0px;
+        }
+
+        .blogcontext .context span {
+            display: block;
+            font-size: .5em;
+            line-height: 2;
+            text-align: justify;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .blogcontext>.bloglink{
+            color: #848484;
+        }
+
+        .blogtime {
+            font-size: 14px;
+            height: 30px;
+            line-height: 30px;
+            color: #757171;
+        }
+        .myblog{
+            text-align: center;
+            color: #888484;
+            margin: 3% 0% 3% 0%;
+            font-size: 32px;
+        }
+        .myblog.showlist{
+            color: #EB5635;
+        }
+        .showlistname{
+            font-size: 0.8em;
+        }
+        .clickshow{
+            color: #848484;
+        }
+        @-webkit-keyframes move{
+            from{right:10px}
+            50%{left: 4px}
+            to{right:10px}
+        }
+        .clicktomyresume{
+            position: relative;
+            -webkit-animation: move 1.5s infinite;
+
+        }
+        .wechat{
+            position: relative;
+        }
+        .wechat.showornone .dimensionalcode{
+            display: block;
+        }
+        .wechat .dimensionalcode{
+            position: absolute;
+            width: 90px;
+            left: -13px;
+            top: 30px;
+            display: none;
+        }
+        @media (max-width:800px){
+            .item{
+                width:45%;
+                border: 1px solid #fff;
+            }
+            .item .hover{
+                bottom: 15%
+            }
+        }
+    </style>
+    <script>
+        $(function () {
+            $('#container').fullpage({
+                navigation: true,
+                navigationPosition: 'right',
+                navigationTooltips: ['我的简介', '我的作品', '我的博客'],
+                sectionsColor: ['#F5F5F5', '#5296B9','#F5F5F5']
+            })
+            $('.wechat').mouseenter(function(){
+                // console.log(1);
+                $(this).addClass('showornone')
+
+            })
+            $('.wechat').mouseleave(function(){
+                // console.log(2);
+                $(this).removeClass('showornone')
+            })
+            $('.item').mouseenter(function(){
+                $(this).addClass('show').siblings().removeClass('show');
+            }).mouseleave(function(){
+                $(this).removeClass('show');
+            })
+        })
+    </script>
+</head>
+<body>
+    <div id="container">
+        <div class="section">
+            <div class="middle">
+                <div class="basicdata">
+                    <div class="picture"><img src="./img/aaa.jpg" alt=""></div>
+                    <h2 class="myname">黄燕虹</h2>
+                    <h3 class="work">应聘岗位：前端工程师</h3>
+                    <!--<div class="produce">
+                        <h1>你好！欢迎来看我的作品集！</h1>
+                    </div>-->
+                    <div class="contacticon">
+                        <span>
+                            <svg class="icon iconone" aria-hidden="true">
+                                <use xlink:href="#icon-youxiang"></use>
+                            </svg>
+                            <span class="emailandphone">184620541@qq.com</span>
+                        </span>
+                        <span>
+                            <svg class="icon iconone" aria-hidden="true">
+                                <use xlink:href="#icon-phone"></use>
+                            </svg>
+                            <span class="emailandphone">18826488752</span>
+                        </span>
+                        <span>
+                            <a href="http://www.jianshu.com/u/8a705c233708" target="_blank">
+                                <svg class="icon iconone" aria-hidden="true">
+                                    <use xlink:href="#icon-iconblog2"></use>
+                                </svg>
+                            </a>
+                        </span>
+                        <span>
+                            <a href="https://github.com/huangyhmax" target="_blank">
+                                <svg class="icon iconone" aria-hidden="true">
+                                    <use xlink:href="#icon-socialgithuboutline"></use>
+                                </svg>
+                            </a>
+                        </span>
+                        <span class="wechat">
+                            <a href="https://github.com/huangyhmax" target="_blank" class="webchatmove">
+                                <svg class="icon iconone" aria-hidden="true">
+                                    <use xlink:href="#icon-weixin"></use>
+                                </svg>
+                            </a>
+                            <a href="#"><img src="./img/2weima.jpg" class="dimensionalcode" alt=""></a>
+                        </span>
+                        
+                    </div>
+                    <span>
+                        <svg class="icon clicktomyresume" aria-hidden="true">
+                            <use xlink:href="#icon-shou-left"></use>
+                        </svg>
+                    </span>
+                    <a href="https://huangyhmax.github.io/huangyhresume/resume.html" target="_blank"><span class="clickshow">点击查看我的在线简历</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="middle">
+                <div class="composition">
+                    <h2 class="myblog showlist">我的作品</h2>
+                    <div class="item">
+                        <div class="hover">
+                            <div class="hoverdesc">
+                                使用Vue-cli脚手架搭建开发环境，单文件组件方式实现模块间的数据传递
+                            </div>
+                            <div class="hoverdesc">
+                                使用scss编写CSS，使用基于Vue2.0的element组件库
+                            </div>
+                        </div>
+                        <img src="./img/myshow/vue.JPG" alt="" class="comspimg">
+                        <div class="title">
+                            <a href="https://huangyhmax.github.io/VueResume/dist/index.html" target="_blank"><span class="showlistname">在线简历生成器（Vue.js）</span></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="hover">
+                            <div class="hoverdesc">
+                                在线应用，使用React框架实现前端组件和数据传输交互，使用Webpack打包构建，LeanCloud存储数据
+                            </div>
+                        </div>
+                        <img src="./img/myshow/react.JPG" alt="" class="comspimg">
+                        <div class="title">
+                            <a href="https://huangyhmax.github.io/react-task5/build/index.html" target="_blank"><span class="showlistname">在线待办事项应用（React）</span></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="hover hoverdescpre">
+                            <div class="hoverdesc">
+                                移动端页面:使用HTML5的Canvas+CSS3绘制图表；
+                            </div>
+                            <img src="./img/h5webapp.JPG" class="previewwebapp">
+                        </div>
+                        <img src="./img/myshow/webapp.JPG" alt="" class="comspimg">
+                        <div class="title webappmove">
+                            <a href="https://huangyhmax.github.io/H5Webapp/work/index.html" target="_blank"><span class="showlistname">微博使用统计报告</span></a>
+                            
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="hover">
+                            <div class="hoverdesc">
+                                实现扁平式页面效果，从新浪新闻图片接口获取图片地址，实现图片瀑布流懒加载的功能
+                            </div>
+                            <div class="hoverdesc">
+                                使用Gulp工具，实现前端工作流自动化全过程
+                            </div>
+                        </div>
+                        <img src="./img/myshow/gulp.JPG" alt="" class="comspimg">
+                        <div class="title">
+                            <a href="https://huangyhmax.github.io/gulp-autoweb/dist/index.html" target="_blank"><span class="showlistname">扁平式网站页面（glup）</span></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="hover">
+                            <div class="hoverdesc">
+                                实现天猫购物网站完整的购物流程的全部页面
+                            </div>
+                            <div class="hoverdesc">
+                                使用JQuery实现必要功能的交互，使用Postcss,工具打包，减少资源请求，加快网页加载速度
+                            </div>
+                        </div>
+                        <img src="./img/myshow/mall.JPG" alt="" class="comspimg">
+                        <div class="title">
+                            <a href="https://huangyhmax.github.io/tianmaomall/html/firstpage.html" target="_blank"><span class="showlistname">天猫商城购物网站</span></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="hover">
+                            <div class="hoverdesc">
+                                使用AJAX技术从微信天气预报接口获取JSON数据，进行转换解析
+                            </div>
+                            <div class="hoverdesc">
+                                实现用户所在城市的定位、显示当天当地以及未来一周的天气预报
+                            </div>
+                        </div>
+                        <img src="./img/myshow/weather.jpg" alt="" class="comspimg">
+                        <div class="title">
+                            <a href="https://huangyhmax.github.io/weather-forecast/" target="_blank"><span class="showlistname">天气预报小程序</span></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="hover">
+                            <div class="hoverdesc">
+                                实现便签的外观样式、无限次创建便签、删除便签、移动置顶便签
+                            </div>
+                            <div class="hoverdesc">
+                                使用原生JavaScript的原型链实现组件化，进行封装
+                            </div>
+                        </div>
+                        <img src="./img/myshow/notes.JPG" alt="" class="comspimg">
+                        <div class="title">
+                            <a href="https://huangyhmax.github.io/Notespaper/index.html" target="_blank"><span class="showlistname">便签小程序</sp></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="hover">
+                            <div class="hoverdesc">
+                                使用Vue-cli脚手架搭建开发环境，单文件组件方式实现模块间的数据传递
+                            </div>
+                            <div class="hoverdesc">
+                                使用scss编写CSS，使用基于Vue2.0的element组件库
+                            </div>
+                        </div>
+                        <img src="./img/weather-report.jpg" alt="" class="comspimg">
+                        <div class="title">
+                            <a href=""><span class="showlistname">项目标题</sp></a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <!--<div class="section">
+            <div class="middle"></div>
+        </div>-->
+        <div class="section">
+            <div class="middle">
+                <h2 class="myblog">我的博客</h2>
+                <ul class="blog">
+                    <li class="blogcontext">
+                        <a href="http://www.jianshu.com/p/cb93532704c4" target="_blank" class="bloglink">
+                            <div class="context">
+                                <h3>正则表达式--零碎点汇总篇</h3>
+                                <span>
+                                    学正则的时候，比较头疼。知识点很零碎又多，容易忘记，而且潜藏的差距细节点，当下通过测试知道了
+                                </span>
+                                <span>
+                                    但不汇总记录的话，后面回过头看，很容易忽略。所以写这篇博文，一次汇总记录正则表达式的一些常见用法和我觉得需要记住的点...
+                                </span>
+                                <!--<span>
+                                    总的而言，this指向全局对象window的情况有：全局直接调用this、在函数中调用this...
+                                </span>-->
+                            </div>
+                        </a>
+                        <span>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-shijian"></use>
+                            </svg>
+                        </span>
+                        <span class="blogtime">2017-06-01</span>
+                    </li>
+                    <li class="blogcontext">
+                        <a href="http://www.jianshu.com/p/4cafd67b6c46" target="_blank" class="bloglink">
+                            <div class="context">
+                                <h3>跨域方式知多少</h3>
+                                <span>
+                                    好记性不如烂笔头，所以学完跨域之后，我还是老实结合demo来整理一篇跨域实现方式的详记。
+                                </span>
+                                <span>
+                                    现实场景中，肯定有很多时候是需要跨域请求、传输数据的。这些合理的用途会被浏览器默认阻止。那么重点来了，为什么浏览器会默认阻止跨域操作呢...
+                                </span>
+                                <!--<span>
+                                    总的而言，this指向全局对象window的情况有：全局直接调用this、在函数中调用this...
+                                </span>-->
+                            </div>
+                        </a>
+                        <span>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-shijian"></use>
+                            </svg>
+                        </span>
+                        <span class="blogtime">2017-06-21</span>
+                    </li>
+                    <li class="blogcontext">
+                        <a href="http://www.jianshu.com/p/bf7f83d12bb8" target="_blank" class="bloglink">
+                            <div class="context">
+                                <h3>栗子最实在：用实例来说明this的含义</h3>
+                                <span>
+                                    this在不同的使用情景中，含义多变，看着看着就可能蒙圈。后面发现通过实例的方式来学习this，通过审查元素直接查看this指向的结果，对this会清晰很多。
+                                </span>
+                                <span>
+                                    总的而言，this指向全局对象window的情况有：全局直接调用this、在函数中调用this...
+                                </span>
+                            </div>
+                        </a>
+                        <span>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-shijian"></use>
+                            </svg>
+                        </span>
+                        <span class="blogtime">2017-06-27</span>
+                    </li>
+                    <li class="blogcontext">
+                        <a href="http://www.jianshu.com/p/dccf1475d339" target="_blank" class="bloglink">
+                            <div class="context">
+                                <h3>前端模块化的规范</h3>
+                                <span>
+                                    前言:现在学习到webpack，然后重新回过头来回顾前端模块化一路发展过程定义的规范，遂写下这篇文...
+                                </span>
+                            </div>
+                        </a>
+                        <span>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-shijian"></use>
+                            </svg>
+                        </span>
+                        <span class="blogtime">2017-07-20</span>
+                    </li>
+                    <li class="blogcontext">
+                        <a href="http://www.jianshu.com/p/4828de5354cd" target="_blank" class="bloglink">
+                            <div class="context">
+                                <h3>ES6学习系列（1）：先来记住这些常用要点</h3>
+                                <span>
+                                    七月中旬，集中时间学习使用React框架的时候，接触到了很多ES6的语法。一开始看的时候，简直一脸蒙蔽
+                                </span>
+                                <span>
+                                    后面对看不懂的代码在google之后知道基本都是ES6的语法的使用,对ES6学习后对常见用法进行整理...
+                                </span>
+                            </div>
+                        </a>
+                        <span>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-shijian"></use>
+                            </svg>
+                        </span>
+                        <span class="blogtime">2017-08-06</span>
+                    </li>
+                    <li class="blogcontext">
+                        <a href="http://www.jianshu.com/p/78e3226b2cef" target="_blank" class="bloglink">
+                            <div class="context">
+                                <h3>CSS系列篇：零碎、细节点整理（一）</h3>
+                                <span>
+                                    这个CSS系列，是我从七月开始陆续整理的系列篇。存放在草稿箱里很久了，
+                                </span>
+                                <span>
+                                    把这几篇系列篇都整理下排版，然后发布出来。为什么要写这个系列，初衷也是因为有很多细节点是需要从源头上去理解的。像是很多属性设置...
+                                </span>
+                            </div>
+                        </a>
+                        <span>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-shijian"></use>
+                            </svg>
+                        </span>
+                        <span class="blogtime">2017-08-08</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        
+    </script>
+</body>
+
+</html>

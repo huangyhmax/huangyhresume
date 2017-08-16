@@ -55,6 +55,32 @@ html,body,#resume{
     letter-spacing: 5px;
     background: #5296B9;
 }
+.basicdata .position,.basicdata .clicktomyshow{
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    background: #5296B9;
+    margin-bottom: 5%;
+}
+.clicktomyshow span,.clicktomyshow svg,.clicktomyshow a{
+    /*font-size: 12px;
+    color: #fff;*/
+    background: #5296B9;
+}
+.clicktomyshow .clickshow{
+    font-size: 14px;
+    color: #fff;
+}
+@-webkit-keyframes move{
+    from{left:5px}
+    50%{left: 13px}
+    to{right:5px}
+}
+.clicktomyresume{
+    position: relative;
+    -webkit-animation: move 1.5s infinite;
+
+}
 .title{
     width: 90%;
     background: #EB5635;
